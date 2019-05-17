@@ -46,6 +46,11 @@ table, th, td {
          margin:1px;
 
 }
+#tabelka
+{
+position:relative;
+top:-250px;
+}
 #form2{
 position:relative;
 left:700px;
@@ -120,7 +125,7 @@ $sql2 = "SELECT * FROM film";
 $result = $conn2->query($sql2);
 
 if ($result->num_rows > 0) {
-    echo '<table><tr><th>id_filmu</th><th>tytul</th><th>rok_produkcji</th><th>gatunek</th><th>opis</th></tr>';
+    echo '<table id="tabelka"><tr><th>id_filmu</th><th>tytul</th><th>rok_produkcji</th><th>gatunek</th><th>opis</th></tr>';
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>{$row['id_filmu']}</td><td>{$row['tytul']}</td><td>{$row['rok_produkcji']}</td><td>{$row['gatunek']}</td><td>{$row['opis']}</td></tr>";
