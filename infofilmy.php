@@ -11,28 +11,97 @@
 table, th, td {
     border: 1px solid black;
 }
-label {
-position:relative;
+#I1{
+	position:relative;
+         left:65px;
+         top:0.1%;
+         margin:1px;
+         //padding:5px;
+}
+#I2{
+	position:relative; 
+         left:40px;
+         top:0.1%;
+         margin:1px;
 
 }
+#I3{
+	position:relative; 
+         left:13px;
+         top:0.1%;
+         margin:1px;
+
+}
+#I4{
+	position:relative; 
+         left:13px;
+         top:0.1%;
+         margin:1px;
+
+}
+#I5{
+	position:relative; 
+         left:20px;
+         top:0.1%;
+         margin:1px;
+
+}
+#form2{
+position:relative;
+left:700px;
+top:-294px;
+}
+/*#I1{
+right:20px;
+}
+#I2{
+position:relative;
+left:5px;
+}
+#I3{
+position:relative;
+left:15px;
+}
+#I4{
+position:relative;
+left:12px;
+}
+#I5{
+position:relative;
+left:10px;
+}*/
 </style>
 </head>
 
 <body>
 <?php
-	echo "<p>Witaj ".$_SESSION['username']."!";
+	echo "<h3>Witaj ".$_SESSION['username']."!</h3>";
 	
 	
 ?>
-	<form action="dodawaniefilmy.php" method="post">
-	<br>
+	<form id="form" action="dodawaniefilmy.php" method="post">
 	<h1>Dodawanie rekordow</h1>
-	<label>Id filmu:</label><input type="text" name="id"/><br>
-	<label>Tytul filmu:</label><input type="text" name="tytul"/><br>
-	<label>Rok produkcji filmu:</label><input type="text" name="rok"/><br>
-	<label>Gatunek filmu:</label><input type="text" name="gatunek"/><br>
-	<label>Opis do filmu:</label><input type="text" name="opis"/><br>
-	<input type="submit" value="Dodaj rekord"/>
+	<label>Id filmu:</label><input id="I1" type="text" name="id"/><br>
+	<label>Tytul filmu:</label><input id="I2" type="text" name="tytul"/><br>
+	<label>Rok produkcji:</label><input id="I3" type="text" name="rok"/><br>
+	<label>Gatunek filmu:</label><input id="I4" type="text" name="gatunek"/><br>
+	<label>Opis do filmu:</label><input id="I5" type="text" name="opis"/><br>
+	<input type="submit" value="Dodaj rekord"></input>
+	<input type="submit" value="Usuń rekord" onclick="document.getElementById('form').action='usuwaniefilmy.php';"/>
+	<input type="submit" value="Edytuj rekord" onclick="document.getElementById('form').action='edycjafilmy.php';"/>
+	<br>
+	<input type="submit" value="Sortuj po tytule" onclick="document.getElementById('form').action='sortpotytule.php';"/>
+	<input type="submit" value="Sortuj po roku" onclick="document.getElementById('form').action='sortporoku.php';"/>
+	<input type="submit" value="Sortuj po gatunku" onclick="document.getElementById('form').action='sortpogatunku.php';"/>
+	</form>
+	<form id="form2" action="wyszukiwanie.php" method="post">
+	<h1>Wyszukiwanie</h1>
+	<h3>Wyszukuj wpisujac dane tylko w jedno wybrane pole</h3>
+        <label>Tytul filmu:</label><input id="I2" type="text" name="tytul"/><br>
+        <label>Rok produkcji:</label><input id="I3" type="text" name="rok"/><br>
+        <label>Gatunek filmu:</label><input id="I4" type="text" name="gatunek"/><br>
+	<label>Opis do filmu:</label><input id="I5" type="text" name="opis"/><br>
+	<input type="submit" value="Wyszukaj"/>
 	</form>
 <br>
 <?php

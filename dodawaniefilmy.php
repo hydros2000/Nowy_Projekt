@@ -41,7 +41,7 @@ else
 $sql="INSERT INTO film (id_filmu,tytul,rok_produkcji,gatunek,opis)
 values ('$idfilmu','$tytul','$rokprodukcji','$gatunek','$opis')";
 if ($conn->query($sql)){
-echo "Nowy rekord dodany";
+#echo "Nowy rekord dodany";
 }
 else{
 echo "Error:". $sql . "
@@ -70,6 +70,7 @@ echo "That should not be empty";
 die();
 }
 }
+header('Location: infofilmy.php');
 #connect();
 #$con = mysql_connect($host,$dbusername,$dbpassword);
 
@@ -83,7 +84,7 @@ die();
 #		echo "<tr><td>{$row['id']}</td><td>{$row['tytul']}</td><td>{$row['rok']}</td><td>{$row['gatunek']}</td><td>{$row['opis']}</td></tr>";
 #	}
 #	echo '</table>';
-$host = "192.168.122.203";
+/*$host = "192.168.122.203";
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "filmy";
@@ -106,8 +107,8 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
-$conn2->close();
+*/
+#$conn2->close();
 ?>
 </body>
 </html>
