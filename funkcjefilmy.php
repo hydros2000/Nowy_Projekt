@@ -2,8 +2,17 @@
 session_start();
 function connect()
 {
-	$polaczenie = mysqli_connect('192.168.122.203','root','','filmy') or die('Cant connect to database');
-	return $polaczenie;
+	$host = "192.168.122.203";
+	$dbusername = "root";
+	$dbpassword = "";
+	$dbname = "filmy";
+
+	$conn2 = new mysqli($host, $dbusername, $dbpassword, $dbname);
+	// Check connection
+	if ($conn2->connect_error) {
+        die("Connection failed: " . $conn2->connect_error);
+	}
+	return $conn2;
 }
 function debug($var)
 {
