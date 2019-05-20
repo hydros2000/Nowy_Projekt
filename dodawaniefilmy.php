@@ -1,3 +1,6 @@
+<?php
+	include('bootstrap.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +29,11 @@ if (!empty($tytul)){
 if (!empty($rokprodukcji)){
 if (!empty($gatunek)){
 if (!empty($opis)){
-$host = "192.168.122.203";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "filmy";
-$conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
-if(mysqli_connect_error())
-{
-die('Connect Error ('.mysqli_connect_errno() .')'
-. mysqli_connect_error());
-}
-else
-{
+#$host = "192.168.122.203";
+#$dbusername = "root";
+#$dbpassword = "";
+#$dbname = "filmy";
+$conn = connect();//new mysqli($host,$dbusername,$dbpassword,$dbname);
 $sql="INSERT INTO film (id_filmu,tytul,rok_produkcji,gatunek,opis)
 values ('$idfilmu','$tytul','$rokprodukcji','$gatunek','$opis')";
 if ($conn->query($sql)){
@@ -48,7 +44,7 @@ echo "Error:". $sql . "
 ". $conn->error;
 }
 $conn->close();
-}
+
 }
 else{
 echo "That should not be empty";

@@ -1,5 +1,4 @@
 <?php
-session_start();
 function connect()
 {
 	$host = "192.168.122.203";
@@ -21,4 +20,4 @@ function debug($var)
 	echo '</pre>';
 	exit;
 }
-?>
+

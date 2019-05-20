@@ -1,7 +1,8 @@
 <?php
-	session_start(); 
+	session_start();
+	include('bootstrap.php'); 
 	require_once "connectfilmy.php";	
-	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name); //polaczenie z bazą, "@" wycisza informacje o bledzie php
+	$polaczenie = connect();//@new mysqli($host, $db_user, $db_password, $db_name); //polaczenie z bazą, "@" wycisza informacje o bledzie php
 	if($polaczenie->connect_errno!=0)
 	{
 	 echo "ERROR: ".$polaczenie->connect_errno;
@@ -31,4 +32,4 @@
 		}		
 		$polaczenie->close();
 	}
-?>
+
